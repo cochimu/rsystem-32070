@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+
+<div class='main'>
+  <div class="cover">
+    <div class="bg">
+    <%= image_tag "Disney1.jpg", class:"background" %>
+    </div>
+    <p class="title">Rsystem</p>
+    <ul class="content_lists">
+      <li class="list1">新規作成</li>
+      <li class="list2">スタッフ名編集</li>
+      <li class="list3">手続き内容編集</li>
+      <li class="list4">提案項目編集</li>
+    </ul>
+  </div>
+
+  <div class="reservations">
+    <h2 class="reservation">予約管理簿一覧</h2>
+    <%# @items.each do |item| %>
+      <ul class='reservation-lists'>
+        <li class='reservation-list'>
+        <%= link_to "#" do %>
+        <div class='item-img-content'>
+          <%#= , class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%#= item.name %>
+          </h3>
+        </div>
+        <% end %>
+        </li>
+      </ul>
+    <%# end %>
+  </div>
+</div>
