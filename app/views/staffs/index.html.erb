@@ -1,0 +1,10 @@
+<%= render "shared/header" %>
+
+<h1>スタッフ名登録</h1>
+<%= form_with model: @staff, url: new_staff_path, id: "new_staff", class: "new_staff", local: true do |f| %>
+  <%= f.text_field :name %>
+  <%= f.button '追加', class:"button", id:"add-button" %>
+  <%= f.button '削除', class:"button", id:"delete-button"%>
+<% end %>
+
+<button type="submit">登録</button>

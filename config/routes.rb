@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root to: "reservations#index"
+  resources :reservations, only: [:index, :show, :new, :create]
+  resources :staffs, only: [:index, :new, :create]
+  resources :items, only: [:index]
+  resources :purposes, only: [:index]
 end
