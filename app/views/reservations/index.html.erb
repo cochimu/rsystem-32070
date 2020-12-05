@@ -7,10 +7,10 @@
     </div>
     <p class="title">Rsystem</p>
     <ul class="content_lists">
-      <li class="list1">新規作成</li>
-      <li class="list2">スタッフ名編集</li>
-      <li class="list3">手続き内容編集</li>
-      <li class="list4">提案項目編集</li>
+      <li><%= link_to '新規作成', new_reservation_path, class: "list1" %></li>
+      <li><%= link_to 'スタッフ名編集', staffs_path, class: "list2" %></li>
+      <li><%= link_to '手続き内容編集', purposes_path, class: "list3" %></li>
+      <li><%= link_to '提案項目編集', items_path, class: "list4" %></li>
     </ul>
   </div>
 
