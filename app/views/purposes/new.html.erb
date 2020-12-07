@@ -1,0 +1,6 @@
+<%= render "shared/header" %>
+
+<%= form_with model: @purpose, url: purposes_path, id: "new-staff", class: "new-staff", local: true do |f| %>
+  <%= f.text_field :content, class:"staff-name", placeholder: "手続き内容" %>
+  <%= f.submit "登録" ,class:"entry-btn" %>
+<% end %>
