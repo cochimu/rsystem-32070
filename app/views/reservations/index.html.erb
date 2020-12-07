@@ -15,7 +15,7 @@
 
   <div class="reservations">
     <h2 class="reservation">予約管理簿一覧</h2>
-    <%#= @reservations.each do |reservation| %>
+    <%= @reservations.each do |reservation| %>
       <ul class='reservation-lists'>
         <li class='reservation-list'>
         <%= link_to "#" do %>
@@ -30,6 +30,6 @@
         <% end %>
         </li>
       </ul>
-    <%# end %>
+    <% end %>
   </div>
 </div>
