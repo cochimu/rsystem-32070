@@ -1,10 +1,23 @@
 <%= render "shared/header" %>
 
-<h1>スタッフ名登録</h1>
-<%= form_with model: @staff, url: new_staff_path, id: "new_staff", class: "new_staff", local: true do |f| %>
-  <%= f.text_field :name %>
-  <%= f.button '追加', class:"button", id:"add-button" %>
-  <%= f.button '削除', class:"button", id:"delete-button"%>
-<% end %>
+<div class="container">
+  <table>
+    <tr>
+      <th colspan="2">名前</th>
+    </tr>
 
-<button type="submit">登録</button>
+    <% @staffs.each do |staff| %>
+      <tr>
+        <td class="left"><%= staff.name %></td><td class="right"><%= link_to "編集", "#", method: :get, class:"staff-edit" %><%= link_to "削除", "#", method: :delete, class:"staff-del"%></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="new-btn">
+  <%= link_to "新規登録", new_staff_path, class:"new-button" %>
+</div>
+
+<div class="back-btn">
+  <%= link_to "TOPページに戻る", root_path, class:"back-button" %>
+</div>

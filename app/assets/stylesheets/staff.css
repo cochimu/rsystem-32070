@@ -1,0 +1,84 @@
+.container {
+  width: 500px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+table {
+  width: 100%;
+}
+
+th,td {
+  border: solid 1px #aaaaaa;
+}
+
+th {
+  font-size: 18px;
+  text-align: center;
+
+}
+
+td {
+  height: 40px;
+  text-align: center;
+}
+
+.left {
+  width: 70%;
+  font-size: 18px;
+}
+
+.staff-edit, .staff-del {
+  text-decoration: none;
+  margin: 10px;
+  font-size: 15px;
+  border: solid 1px black;
+  color: black;
+  padding: 3px;
+}
+
+.back-btn,.new-btn {
+  position: relative;
+  width: 130px;
+  height: 40px;
+  background-color: lightseagreen;
+  margin-left: 190px;
+  margin-top: 20px;
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  bottom: 5px;
+  left: 13px;
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.new-button {
+  position: absolute;
+  top: 12px;
+  bottom: 5px;
+  left: 38px;
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.staff-name {
+  width: 300px;
+  height: 40px;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.entry-btn {
+  width: 50px;
+  height: 38px;
+  font-size: 15px;
+  background-color: lightseagreen;
+  color: white;
+  border: none;
+}
