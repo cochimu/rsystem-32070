@@ -14,14 +14,18 @@ ActiveRecord::Schema.define(version: 2020_12_05_031700) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "purposes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_purposes_on_user_id"
   end
 
   create_table "reservation_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -61,8 +65,10 @@ ActiveRecord::Schema.define(version: 2020_12_05_031700) do
 
   create_table "staffs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_staffs_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -78,6 +84,8 @@ ActiveRecord::Schema.define(version: 2020_12_05_031700) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "items", "users"
+  add_foreign_key "purposes", "users"
   add_foreign_key "reservation_items", "items"
   add_foreign_key "reservation_items", "reservations"
   add_foreign_key "reservation_purposes", "purposes"
@@ -85,4 +93,5 @@ ActiveRecord::Schema.define(version: 2020_12_05_031700) do
   add_foreign_key "reservation_staffs", "reservations"
   add_foreign_key "reservation_staffs", "staffs"
   add_foreign_key "reservations", "users"
+  add_foreign_key "staffs", "users"
 end

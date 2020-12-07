@@ -8,7 +8,7 @@
 
     <% @staffs.each do |staff| %>
       <tr>
-        <td class="left"><%= staff.name %></td><td class="right"><%= link_to "編集", "#", method: :get, class:"staff-edit" %><%= link_to "削除", "#", method: :delete, class:"staff-del"%></td>
+        <td class="left"><%= staff.name %></td><td class="right"><%= link_to "削除", staff_path(staff.id), method: :delete, class:"staff-del"%></td>
       </tr>
     <% end %>
   </table>
