@@ -1,15 +1,16 @@
 class ReservationsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @reservations = current_user.reservations.order(created_at: :DESC)
+    if user_signed_in?
+      @reservations = current_user.reservations
+    else
+      @reservations = Reservation.all
+    end
   end
 
   def new
-    if user_signed_in?
-      @reservation = Reservation.new
-    else
-      redirect_to new_user_session_path
-    end
+    @reservation = Reservation.new
   end
 
   def create
