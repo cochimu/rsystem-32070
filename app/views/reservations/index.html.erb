@@ -5,7 +5,6 @@
     <div class="bg">
     <%= image_tag "Disney1.jpg", class:"background" %>
     </div>
-    <p class="title">Rsystem</p>
     <ul class="content_lists">
       <li><%= link_to '新規作成', new_reservation_path, class: "list1" %></li>
       <li><%= link_to 'スタッフ名編集', staffs_path, class: "list2" %></li>
@@ -16,7 +15,7 @@
 
   <div class="reservations">
     <h2 class="reservation">予約管理簿一覧</h2>
-    <%# @items.each do |item| %>
+    <%= @reservations.each do |reservation| %>
       <ul class='reservation-lists'>
         <li class='reservation-list'>
         <%= link_to "#" do %>
@@ -31,6 +30,6 @@
         <% end %>
         </li>
       </ul>
-    <%# end %>
+    <% end %>
   </div>
 </div>

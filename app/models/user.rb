@@ -12,5 +12,8 @@ class User < ApplicationRecord
   end
 
   has_many :reservations
-
+  has_many :staffs
+  has_many :purposes
+  has_many :items
+  
 end

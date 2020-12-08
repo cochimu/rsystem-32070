@@ -11,6 +11,9 @@
 ### Association
 
 - has_many :reservations
+- has_many :staffs
+- has_many :purposes
+- has_many :items
 
 ## reservations テーブル
 
@@ -40,14 +43,16 @@
 
 ## staffs テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| name   | string     | null: false                    |
+| user   | references | null: false, foreign_key: true |
 
 ### Association
 
 - has_many :reservation_staffs
 - has_many :reservations, through: reservation_staffs
+- belongs_to :user
 
 ## reservation_purposes テーブル
 
@@ -63,14 +68,16 @@
 
 ## purposes テーブル
 
-| Column  | Type   | Options     |
-| ------- | ------ | ----------- |
-| content | string | null: false |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     | null: false                    |
+| user    | references | null: false, foreign_key: true |
 
 ### Association
 
 - has_many :reservation_purposes
 - has_many :reservations, through: reservation_purposes
+- belongs_to :user
 
 # reservation_items テーブル
 
@@ -86,11 +93,13 @@
 
 ## items テーブル
 
-| Column  | Type   | Options     |
-| ------- | ------ | ----------- |
-| content | string | null: false |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     | null: false                    |
+| user    | references | null: false, foreign_key: true |
 
 ### Association
 
 - has_many :reservation_items
 - has_many :reservations, through: reservation_items
+- belongs_to :user

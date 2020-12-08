@@ -1,1 +1,23 @@
 <%= render "shared/header" %>
+
+<div class="container">
+  <table>
+    <tr>
+      <th colspan="2">手続き内容</th>
+    </tr>
+
+    <% @purposes.each do |purpose| %>
+      <tr>
+        <td class="left"><%= purpose.content %></td><td class="right"><%= link_to "削除", purpose_path(purpose.id), method: :delete, class:"staff-del"%></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="new-btn">
+  <%= link_to "新規登録", new_purpose_path, class:"new-button" %>
+</div>
+
+<div class="back-btn">
+  <%= link_to "TOPページに戻る", root_path, class:"back-button" %>
+</div>
