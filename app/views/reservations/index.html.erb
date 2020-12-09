@@ -15,21 +15,23 @@
 
   <div class="reservations">
     <h2 class="reservation">予約管理簿一覧</h2>
-    <%= @reservations.each do |reservation| %>
-      <ul class='reservation-lists'>
-        <li class='reservation-list'>
-        <%= link_to "#" do %>
-        <div class='item-img-content'>
-          <%#= , class: "item-img" %>
-        </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%#= item.name %>
-          </h3>
-        </div>
-        <% end %>
-        </li>
-      </ul>
+    <% if user_signed_in? %>
+      <%= @reservations.each do |reservation| %>
+        <ul class='reservation-lists'>
+          <li class='reservation-list'>
+            <%= link_to "#" do %>
+              <div class='item-img-content'>
+               <%#= , class: "item-img" %>
+              </div>
+              <div class='item-info'>
+              <h3 class='item-name'>
+                <%#= item.name %>
+              </h3>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
     <% end %>
   </div>
 </div>
