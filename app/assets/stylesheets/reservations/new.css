@@ -1,0 +1,16 @@
+table , td, th {
+	border: 1px solid #595959;
+	border-collapse: collapse;
+}
+
+table {
+  width: 2000px;
+}
+
+.time {
+  width: 50px;
+}
+
+.staff--name {
+  width: 200px;
+}
