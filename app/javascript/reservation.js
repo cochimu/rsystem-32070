@@ -1,9 +1,18 @@
 function addDelete() {
-  const addClone = document.getElementById("add-btn");
-  addClone.addEventListener('click',() => {
-   const cloneLanes = document.getElementsByClassName("right-Table");
-   const cloneBox = cloneLanes[0].cloneNode(true);
-   document.body.appendChild(cloneBox);  
+  const addBtn = document.getElementById("add-btn");
+  addBtn.addEventListener('click',() => {
+   const cloneTable = document.getElementsByClassName("right-Table");
+   const cloneBox = cloneTable[0].cloneNode(true);
+   document.querySelector('.table').appendChild(cloneBox);  
   });
+
+  const delBtn = document.getElementById("del-btn");
+  delBtn.addEventListener('click',() => {
+    const allTable = document.querySelector(".table");
+    const rightTable = document.getElementsByClassName("right-Table");
+    const lastTable = allTable.lastElementChild;
+    allTable.removeChild(lastTable);
+  });
+
 }
 window.addEventListener('load', addDelete)
