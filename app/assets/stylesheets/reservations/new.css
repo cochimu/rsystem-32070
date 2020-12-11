@@ -1,16 +1,59 @@
-table , td, th {
-	border: 1px solid #595959;
-	border-collapse: collapse;
+/*追加ボタン、削除ボタン*/
+.btn-stitch {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 5px #668ad8;
+  border: dashed 1px #FFF;
+  margin: 10px;
+}
+.btn-stitch:hover {
+  border: dotted 1px #FFF;
 }
 
-table {
-  width: 2000px;
+/*全体*/
+.table {
+  width: 100vw;
+  display: flex;
 }
 
-.time {
-  width: 50px;
+/*時間部分*/
+.left-Table{
+	display: table;
+  width: 100%;
+}
+.left-TableRow {
+  display: table-row;
+  height: 100px;
+}
+.left-TableCell {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+}
+.left-TableBody {
+  display: table-row-group;
 }
 
-.staff--name {
-  width: 200px;
+/*スタッフレーン部分*/
+.right-Table{
+	display: table;
+  width: 100px;
+  border: 1px solid #000;
+  border-left: none;
+}
+.right-TableRow {
+  display: table-row;
+  height: 25px;
+}
+.right-TableCell {
+	border-bottom: 1px dashed #999999;
+	display: table-cell;
+  padding: 3px 10px;
+}
+.right-TableBody {
+  display: table-row-group;
 }
