@@ -1,17 +1,24 @@
 <%= render "shared/header" %>
 
+<div class="top-header">
+<div class="add-del-btn">
 <input id="day" type="text " placeholder="日付を入力する"/>
-
 <button class="btn-stitch" id="add-btn">追加</button>
 <button class="btn-stitch" id="del-btn">削除</button>
+</div>
 
+<div class="save-back-button">
+<%= button_to "保存",  reservations_path, class:"btn-stitch", id:"save-btn" %>
+<%= link_to "TOPページに戻る", root_path, class:"btn-stitch", id:"back-btn" %>
+</div>
+</div>
 
 <div class="table">
 
 <div class="left-Table" style="width: 5%; border: 1px solid #000;">
   <div class="left-TableBody">
-    <div class="left-TableRow">
-      <div class="left-TableCell"></div>
+    <div class="left-TableTop">
+      <div class="left-TableCellTop"></div>
     </div>
     <div class="left-TableRow">
       <div class="left-TableCell">10:00</div>
@@ -51,150 +58,14 @@
 
 <div class="right-Table">
   <div class="right-TableBody">
+    <div class="right-TableTop">
+      <div class="right-TableCellTop">&nbsp;</div>
+    </div>
+    <% 44.times do |lane| %>
     <div class="right-TableRow">
       <div class="right-TableCell">&nbsp;</div>
     </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
+    <% end %>
   </div>
 <div>
 
