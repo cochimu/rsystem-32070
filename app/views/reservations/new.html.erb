@@ -1,5 +1,6 @@
 <%= render "shared/header" %>
 
+<%#上部ボタン%>
 <div class="top-header">
 <div class="add-del-btn">
 <input id="day" type="text " placeholder="日付を入力する"/>
@@ -12,9 +13,11 @@
 <%= link_to "TOPページに戻る", root_path, class:"btn-stitch", id:"back-btn" %>
 </div>
 </div>
+<%#上部ボタン%>
 
 <div class="table">
 
+<%#時間部分%>
 <div class="left-Table" style="width: 5%; border: 1px solid #000;">
   <div class="left-TableBody">
     <div class="left-TableTop">
@@ -55,7 +58,9 @@
     </div>
   </div>
 </div>
+<%#時間部分%>
 
+<%#レーン部分%>
 <div class="right-Table">
   <div class="right-TableBody">
     <div class="right-TableTop">
@@ -68,5 +73,6 @@
     <% end %>
   </div>
 <div>
+<%#レーン部分%>
 
 </div>
