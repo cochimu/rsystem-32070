@@ -16,16 +16,16 @@
   <div class="reservations">
     <h2 class="reservation">予約管理簿一覧</h2>
     <% if user_signed_in? %>
-      <%= @reservations.each do |reservation| %>
+      <% @reservations.each do |reservation| %>
         <ul class='reservation-lists'>
           <li class='reservation-list'>
-            <%= link_to "#" do %>
-              <div class='item-img-content'>
-               <%#= , class: "item-img" %>
+            <%= link_to edit_reservation_path(reservation.id) do %>
+              <div class='image'>
+               <%= image_tag "reservation.jpg", class: "reservation-img" %>
               </div>
               <div class='item-info'>
               <h3 class='item-name'>
-                <%#= item.name %>
+                <%= reservation.created_at %>
               </h3>
               </div>
             <% end %>

@@ -11,6 +11,9 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    @staffs = current_user.staffs
+    @purposes = current_user.purposes
+    @items = current_user.items
   end
 
   def create
@@ -25,7 +28,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.permit(:customer_name).merge(user_id: current_user.id)
+    params.require(:reservation).permit(:customer_name, :memo).merge(user_id: current_user.id)
   end
 
 end

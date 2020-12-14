@@ -67,3 +67,7 @@
 .reservation-list {
   background-color: lightblue;
 }
+
+.reservation-img {
+  width: 100px;
+}

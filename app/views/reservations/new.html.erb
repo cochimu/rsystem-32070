@@ -1,4 +1,3 @@
-<%= render "shared/header" %>
 
 <%#上部ボタン%>
 <div class="top-header">
@@ -18,44 +17,20 @@
 <div class="table">
 
 <%#時間部分%>
-<div class="left-Table" style="width: 5%; border: 1px solid #000;">
+<div class="left-Table">
   <div class="left-TableBody">
-    <div class="left-TableTop">
-      <div class="left-TableCellTop"></div>
-    </div>
-    <div class="left-TableRow">
-      <div class="left-TableCell">10:00</div>
-    </div>
-    <div class="left-TableRow">
-      <div class="left-TableCell">11:00</div>
-    </div>
-    <div class="left-TableRow">
-      <div class="left-TableCell">12:00</div>
-    </div>
-    <div class="left-TableRow">
-		  <div class="left-TableCell">13:00</div>
-    </div>
-    <div class="left-TableRow">
-      <div class="left-TableCell">14:00</div>
-    </div>
-    <div class="left-TableRow">
-      <div class="left-TableCell">15:00</div>
-    </div>
-    <div class="left-TableRow">
-      <div class="left-TableCell">16:00</div>
-    </div>
-    <div class="left-TableRow">
-      <div class="left-TableCell">17:00</div>
-    </div>
-    <div class="left-TableRow">
-      <div class="left-TableCell">18:00</div>
-    </div>
-    <div class="left-TableRow">
-      <div class="left-TableCell">19:00</div>
-    </div>
-    <div class="left-TableRow">
-      <div class="left-TableCell">20:00</div>
-    </div>
+    <div class="left-TableTop"></div>
+    <div class="left-TableRow">10:00</div>
+    <div class="left-TableRow">11:00</div>
+    <div class="left-TableRow">12:00</div>
+    <div class="left-TableRow">13:00</div>
+    <div class="left-TableRow">14:00</div>
+    <div class="left-TableRow">15:00</div>
+    <div class="left-TableRow">16:00</div>
+    <div class="left-TableRow">17:00</div>
+    <div class="left-TableRow">18:00</div>
+    <div class="left-TableRow">19:00</div>
+    <div class="left-TableRow">20:00</div>
   </div>
 </div>
 <%#時間部分%>
@@ -63,13 +38,18 @@
 <%#レーン部分%>
 <div class="right-Table">
   <div class="right-TableBody">
-    <div class="right-TableTop">
-      <div class="right-TableCellTop">&nbsp;</div>
-    </div>
-    <% 44.times do |lane| %>
-    <div class="right-TableRow">
-      <div class="right-TableCell">&nbsp;</div>
-    </div>
+    <%= form_with model: @reservation, url: reservations_path, local: true do |f| %>
+      <div class="right-TableTop">
+        <%= f.collection_select(:staff_id, Staff.all, :id, :name, {include_blank: "スタッフ名"}, {class:"staffname"}) %>
+      </div>
+
+      <div class="right-TableRow">
+        <%= f.text_field :customer_name, class:"customer-name", placeholder: "お客様名"%>
+        <%= f.collection_select(:purpose_id, Purpose.all, :id, :content, {include_blank: "手続き内容"}, {class:"purpose-content"}) %>
+        <%= f.collection_select(:item_id, Item.all, :id, :content, {include_blank: "提案項目"}, {class:"item-content"}) %>
+        <%= f.text_area :memo, class:"memo", placeholder: "メモ"%>
+        <%= f.submit "保存" , class:"btn" %>
+      </div>
     <% end %>
   </div>
 <div>

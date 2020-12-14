@@ -26,8 +26,6 @@
   border: dotted 1px #FFF;
 }
 
-/*保存ボタン、戻るボタン*/
-
 /*全体*/
 .table {
   width: 100vw;
@@ -35,57 +33,63 @@
 }
 
 /*時間部分*/
-.left-Table{
-	display: table;
+.left-Table {
+  width: 100px;
+}
+.left-TableBody {
   width: 100%;
 }
 .left-TableTop {
-  display: table-row;
+  background-color: coral;
+  text-align: center;
+  color: #FFF;
+  width: 100%;
   height: 50px;
-}
-.left-TableCellTop {
-  border: 1px solid #999999;
-	display: table-cell;
-	padding: 3px 10px;
+  margin: 10px;
+  border-radius: 10px;
 }
 .left-TableRow {
-  display: table-row;
-  height: 100px;
-}
-.left-TableCell {
-	border: 1px solid #999999;
-	display: table-cell;
-	padding: 3px 10px;
-}
-.left-TableBody {
-  display: table-row-group;
+  text-align: center;
+  font-family: 'Skia-Regular_Black','Arial Black','Segoe UI Black','Arial Rounded MT Bold','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+  font-size: 2.5rem;
+  padding-top: 2rem;
+  color: #FFF;
+  background-color: darkslategray;
+  width: 100%;
+  height: 150px;
+  margin: 10px;
+  padding-top: 6rem;
+  border-radius: 10px;
 }
 
 /*スタッフレーン部分*/
 .right-Table{
-	display: table;
-  width: 100px;
-  border: 1px solid #000;
-  border-left: none;
-}
-.right-TableTop {
-  display: table-row;
-  height: 50px;
-  background-color: coral;
-}
-.right-TableRow {
-  display: table-row;
-  height: 25px;
-}
-.right-TableCellTop {
-  display: table-cell;
-  padding: 3px 10px;
-}
-.right-TableCell {
-	border-bottom: 1px dashed #999999;
-	display: table-cell;
-  padding: 3px 10px;
+  width: 150px;
+  margin-left: 10px;
 }
 .right-TableBody {
-  display: table-row-group;
+  width: 100%;
+}
+.right-TableTop {
+  background-color: lightpink;
+  width: 100%;
+  height: 50px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.right-TableRow {
+  background-color: lightgray;
+  width: 100%;
+  height: 150px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.staffname {
+  background-color: lightpink;
+  width: 90%;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 10px;
+  border: none;
 }
