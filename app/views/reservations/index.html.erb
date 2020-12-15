@@ -1,16 +1,27 @@
-<%= render "shared/header" %>
-
 <div class='main'>
   <div class="cover">
-    <div class="bg">
-    <%= image_tag "Disney1.jpg", class:"background" %>
+    <div class='nav'>
+      <ul class='lists'>
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.name, "#", class: "user-name" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+      </ul>
     </div>
-    <ul class="content_lists">
-      <li><%= link_to '新規作成', new_reservation_path, class: "list1" %></li>
-      <li><%= link_to 'スタッフ名編集', staffs_path, class: "list2" %></li>
-      <li><%= link_to '手続き内容編集', purposes_path, class: "list3" %></li>
-      <li><%= link_to '提案項目編集', items_path, class: "list4" %></li>
-    </ul>
+
+    <div class='logo'>
+    <%= image_tag"logo.png", class:"rsystem-icon"%>
+    </div>
+
+    <div class="content_lists">
+      <div class="list1"><%= link_to '新規作成', new_reservation_path, class:"list" %></div>
+      <div class="list2"><%= link_to 'スタッフ名編集', staffs_path, class:"list" %></div>
+      <div class="list3"><%= link_to '手続き内容編集', purposes_path, class:"list" %></div>
+      <div class="list4"><%= link_to '提案項目編集', items_path, class:"list" %></div>
+    </div>
   </div>
 
   <div class="reservations">
@@ -35,3 +46,4 @@
     <% end %>
   </div>
 </div>
+
