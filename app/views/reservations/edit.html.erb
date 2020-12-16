@@ -7,7 +7,6 @@
 </div>
 
 <div class="save-back-button">
-<%= button_to "保存",  reservations_path, class:"btn-stitch", id:"save-btn" %>
 <%= link_to "TOPページに戻る", root_path, class:"btn-stitch", id:"back-btn" %>
 </div>
 </div>
@@ -37,17 +36,20 @@
 <%#レーン部分%>
 <div class="right-Table">
   <div class="right-TableBody">
-    <%= form_with model: @reservation, url: reservations_path, local: true do |f| %>
+    <%= form_with model: @reservation, url: reservation_path, local: true do |f| %>
       <div class="right-TableTop">
-        <%= f.collection_select(:staff_id, Staff.all, :id, :name, {include_blank: "スタッフ名"}, {class:"staffname"}) %>
+        <%= f.collection_select(:staff_id, Staff.all, :id, :name, {}, {class:"staffname"}) %>
       </div>
 
       <div class="right-TableRow">
-        <%= f.text_field :customer_name, class:"customer-name", placeholder: "お客様名"%>
-        <%= f.collection_select(:purpose_id, Purpose.all, :id, :content, {include_blank: "手続き内容"}, {class:"purpose-content"}) %>
-        <%= f.collection_select(:item_id, Item.all, :id, :content, {include_blank: "提案項目"}, {class:"item-content"}) %>
+        <%= f.text_field :customer_name, class:"customer-name", id:"form",placeholder: "お客様名"%>
+        <%= f.collection_select(:purpose_id, Purpose.all, :id, :content, {}, {class:"purpose-content"}) %>
+        <%= f.collection_select(:item_id, Item.all, :id, :content, {}, {class:"item-content"}) %>
         <%= f.text_area :memo, class:"memo", placeholder: "メモ"%>
-        <%= f.submit "保存" , class:"btn" %>
+      </div>
+
+      <div class="save-btn">
+        <%= f.submit '保存' %>
       </div>
     <% end %>
   </div>

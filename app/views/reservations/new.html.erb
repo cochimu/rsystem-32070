@@ -8,7 +8,6 @@
 </div>
 
 <div class="save-back-button">
-
 <%= link_to "TOPページに戻る", root_path, class:"btn-stitch", id:"back-btn" %>
 </div>
 </div>
@@ -48,6 +47,10 @@
         <%= f.collection_select(:purpose_id, Purpose.all, :id, :content, {include_blank: "手続き内容"}, {class:"purpose-content"}) %>
         <%= f.collection_select(:item_id, Item.all, :id, :content, {include_blank: "提案項目"}, {class:"item-content"}) %>
         <%= f.text_area :memo, class:"memo", placeholder: "メモ"%>
+      </div>
+
+      <div class="save-btn">
+        <%= f.submit '保存' %>
       </div>
     <% end %>
   </div>
