@@ -36,23 +36,10 @@ html {
 
 .user-name {
   text-decoration: none;
-  color: #fcf8f8;
   font-weight: bold;
   margin-right: 30px;
 }
 
 .logout {
   text-decoration: none;
-  color: #fcf8f8;
-}
-
-.login {
-  text-decoration: none;
-  color: #fcf8f8;
-  margin-right: 30px;
-}
-
-.sign-up {
-  text-decoration: none;
-  color: #fcf8f8;
 }
