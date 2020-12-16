@@ -7,6 +7,7 @@
 </div>
 
 <div class="save-back-button">
+<%= link_to '削除', reservation_path(@reservation.id), method: :delete, class:'reservation-destroy' %>
 <%= link_to "TOPページに戻る", root_path, class:"btn-stitch", id:"back-btn" %>
 </div>
 </div>
