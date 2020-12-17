@@ -1,45 +1,56 @@
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
-html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
-.top-page-header {
+header {
   width: 100vw;
-  padding: 10px;
-  display: flex;
-  justify-content: flex-end;
+  height: 60px;
 }
 
-
-.nav {
-  font-size: 18px;
+.menu-nav {
   width: 100%;
-  padding: 1vh 0;
+  height: 100%;
+  border-bottom: dotted;
+  border-width: 5px;
+  border-color: #00ebc7;
+  background-color: #fffffe;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-user {
+  height: 100%;
+  width: 200px;
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.menu-user-name {
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #232946;
+  font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','ヒラギノ角ゴシック','Hiragino Sans','Meiryo UI','メイリオ', Meiryo,sans-serif;
+}
+
+.menu-icons {
+  height: 100%;
+  margin-right: 20px;
+  margin-top: 5px;
   display: flex;
   justify-content: flex-end;
-  padding-right: 30px;
-  padding-top: 30px;
 }
 
-.lists {
-  list-style: none;
-  display: flex;
+.iconback {
+  height: 85%;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #ffc6c7;
+  margin: 0 10px;
+  text-align: center;
 }
 
-.user-name {
-  text-decoration: none;
-  font-weight: bold;
-  margin-right: 30px;
+.iconback:hover {
+  background-color: #ff8ba7;
 }
 
-.logout {
-  text-decoration: none;
+.icon1 {
+  margin-top: 10px;
 }

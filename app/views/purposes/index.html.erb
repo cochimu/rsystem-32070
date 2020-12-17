@@ -1,4 +1,23 @@
-<%= render "shared/header" %>
+<header class='menu-header'>
+  <div class='menu-nav'>
+    <div class='menu-user'>
+    <%= link_to current_user.name, "#", class: "menu-user-name" %>
+    </div>
+    <div class="menu-icons">
+      <div class="iconback">
+        <%= link_to image_tag("homeicon.png", class:"icon1"), root_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("reservationicon.png", class:"icon1"), new_reservation_path  %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("stafficon.png", class:"icon1"), staffs_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("itemicon.png", class:"icon1"), items_path  %>
+      </div>
+  </div>
+</header>
 
 <div class="container">
   <table>
@@ -16,8 +35,4 @@
 
 <div class="new-btn">
   <%= link_to "新規登録", new_purpose_path, class:"new-button" %>
-</div>
-
-<div class="back-btn">
-  <%= link_to "TOPページに戻る", root_path, class:"back-button" %>
 </div>

@@ -15,6 +15,7 @@
   border-bottom: dotted;
   border-width: 5px;
   border-color: #00ebc7;
+  background-color: #fffffe;
 }
 .top-lists {
   list-style: none;
@@ -22,10 +23,13 @@
   font-size: 2.5rem;
   font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','ヒラギノ角ゴシック','Hiragino Sans','Meiryo UI','メイリオ', Meiryo,sans-serif;
 }
+.top-user-name {
+  font-weight: bold;
+}
 .top-user-name,
 .top-login {
   text-decoration: none;
-  margin: 0px 50px 0px 5px;
+  margin: 0px 50px 0px 10px;
   color: #232946;
   position: relative;
   display: inline-block;
@@ -144,6 +148,7 @@ p {
 .reservations {
   width: 100%;
   display: flex;
+  background-color: #fffffe;
 }
 .reservation-lists {
   width: 100%;
@@ -153,15 +158,17 @@ p {
   height: 150px;
   width: 150px;
   margin: 1%;
-  background-color: lightblue;
   position: relative;
 }
 
-.reservation-img {
-  width: 100px;
-  height: 100px;
+.image {
+  width: 120px;
+  height: 120px;
   position: absolute;
-  top: 10px;
-  left: 20px;
+  border: solid 3px #94a1b2;
+  background-color: #fffffe;
+  top: 20px;
   bottom: 0;
+  left: 20px;
+  border-radius: 10px;
 }

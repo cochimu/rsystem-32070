@@ -1,4 +1,23 @@
-<%= render "shared/header" %>
+<header class='menu-header'>
+  <div class='menu-nav'>
+    <div class='menu-user'>
+    <%= link_to current_user.name, "#", class: "menu-user-name" %>
+    </div>
+    <div class="menu-icons">
+      <div class="iconback">
+        <%= link_to image_tag("homeicon.png", class:"icon1"), root_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("reservationicon.png", class:"icon1"), new_reservation_path  %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("purposeicon.png", class:"icon1"), purposes_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("itemicon.png", class:"icon1"), items_path  %>
+      </div>
+  </div>
+</header>
 
 <%= form_with model: @staff, url: staffs_path, id: "new-staff", class: "new-staff", local: true do |f| %>
   <%= f.text_field :name, class:"staff-name", placeholder: "スタッフ名" %>

@@ -45,12 +45,6 @@
           <div class='reservation-list'>
             <%= link_to edit_reservation_path(reservation.id) do %>
               <div class='image'>
-               <%= image_tag "reservation.jpg", class: "reservation-img" %>
-              </div>
-              <div class='item-info'>
-              <h3 class='item-name'>
-                <%= reservation.created_at %>
-              </h3>
               </div>
             <% end %>
           </div>

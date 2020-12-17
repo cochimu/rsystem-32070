@@ -1,8 +1,23 @@
-<header class='top-page-header'>
-  <div class='nav'>
-    <ul class='lists'>
-      <li><%= link_to current_user.name, "#", class: "user-name" %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-    </ul>
+<header class='menu-header'>
+  <div class='menu-nav'>
+    <div class='menu-user'>
+    <%= link_to current_user.name, "#", class: "menu-user-name" %>
+    </div>
+    <div class="menu-icons">
+      <div class="iconback">
+        <%= link_to image_tag("homeicon.png", class:"icon1"), root_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("reservationicon.png", class:"icon1"), new_reservation_path  %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("stafficon.png", class:"icon1"), staffs_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("purposeicon.png", class:"icon1"), purposes_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("itemicon.png", class:"icon1"), items_path  %>
+      </div>
   </div>
 </header>
