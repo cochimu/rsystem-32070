@@ -3,6 +3,7 @@
     <div class='top-nav'>
       <ul class='top-lists'>
       <% if user_signed_in? %>
+        <li><%= image_tag"usericon.png",class:"usericon" %></li>
         <li><%= link_to current_user.name, "#", class: "top-user-name" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "top-logout" %></li>
       <% else %>
@@ -36,6 +37,7 @@
     </div>
   </div>
 
+  
   <div class="reservations">
     <% if user_signed_in? %>
       <% @reservations.each do |reservation| %>
