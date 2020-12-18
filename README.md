@@ -20,6 +20,8 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | customer_name | string     | null: false                    |
+| memo          | string     | null: false                    |
+| day           | date       | null: false                    |
 | user          | references | null: false, foreign_key: true |
 
 ### Association

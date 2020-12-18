@@ -42,10 +42,19 @@ html {
 
 /*時間部分*/
 .left-Table {
-  width: 100px;
+  width: 150px;
 }
 .left-TableBody {
   width: 100%;
+}
+.day {
+  width: 130px;
+  margin-top: 15px;
+  background-color: #f25f4c;
+  font-size: 1.3rem;
+  border: none;
+  color: #fffffe;
+  font-family: 'Skia-Regular_Black','Arial Black','Segoe UI Black','Arial Rounded MT Bold','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
 }
 .left-TableTop {
   background-color: #f25f4c;
@@ -71,7 +80,7 @@ html {
 
 /*レーン部分*/
 .right-Table{
-  width: 150px;
+  width: 180px;
   margin-left: 10px;
 }
 .right-TableBody {

@@ -44,7 +44,15 @@
         <div class='reservation-lists'>
           <div class='reservation-list'>
             <%= link_to edit_reservation_path(reservation.id) do %>
-              <div class='image'>
+              <div class='chart'>
+                <div class="indexday">
+                  <%= reservation.day.strftime('%m/%d') %>
+                </div>
+                <div class="indexweek">
+                  <% weeks = ["月","火","水","木","金","土","日"] %>
+                  <% index = reservation.day.strftime("%u").to_i %>
+                  <%= reservation.day.strftime("(#{weeks[index - 1]})") %>
+                </div>
               </div>
             <% end %>
           </div>

@@ -147,21 +147,17 @@ p {
 
 .reservations {
   width: 100%;
+  flex-flow: row wrap;
   display: flex;
   background-color: #fffffe;
 }
-.reservation-lists {
-  width: 100%;
-}
-
 .reservation-list {
   height: 150px;
   width: 150px;
-  margin: 1%;
+  margin: 0 25px;
   position: relative;
 }
-
-.image {
+.chart {
   width: 120px;
   height: 120px;
   position: absolute;
@@ -171,4 +167,18 @@ p {
   bottom: 0;
   left: 20px;
   border-radius: 10px;
+}
+.indexday {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 20px;
+  color: #94a1b2;
+  font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','ヒラギノ角ゴシック','Hiragino Sans','Meiryo UI','メイリオ', Meiryo,sans-serif;
+}
+.indexweek {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 5px;
+  color: #94a1b2;
+  font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','ヒラギノ角ゴシック','Hiragino Sans','Meiryo UI','メイリオ', Meiryo,sans-serif;
 }

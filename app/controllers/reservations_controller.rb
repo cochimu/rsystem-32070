@@ -47,7 +47,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:customer_name, :memo).merge(user_id: current_user.id)
+    params.require(:reservation).permit(:customer_name, :memo, :day).merge(user_id: current_user.id)
   end
 
 end
