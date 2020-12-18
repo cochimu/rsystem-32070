@@ -1,3 +1,4 @@
+<%#ヘッダー%>
 <header class='menu-header'>
   <div class='menu-nav'>
     <div class='menu-user'>
@@ -19,6 +20,7 @@
   </div>
 </header>
 
+<%#登録フォーム%>
 <%= form_with model: @item, url: items_path, id: "new-staff", class: "new-staff", local: true do |f| %>
   <%= f.text_field :content, class:"staff-name", placeholder: "提案項目" %>
   <%= f.submit "登録" ,class:"entry-btn" %>

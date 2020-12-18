@@ -1,16 +1,37 @@
+<%#ヘッダー%>
+<header class='menu-header'>
+  <div class='menu-nav'>
+    <div class='menu-user'>
+      <%= link_to current_user.name, "#", class: "menu-user-name" %>
+    </div>
+    <div class="menu-icons">
+      <div class="iconback">
+        <%= link_to image_tag("homeicon.png", class:"icon1"), root_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("stafficon.png", class:"icon1"), staffs_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("purposeicon.png", class:"icon1"), purposes_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("itemicon.png", class:"icon1"), items_path  %>
+      </div>
+    </div>
+  </div>
+</header>
+
 <%#上部ボタン%>
-<div class="top-header">
-<div class="add-del-btn">
-<input id="day" type="text " placeholder="日付を入力する"/>
-<button class="btn-stitch" id="add-btn">追加</button>
-<button class="btn-stitch" id="del-btn">削除</button>
+<div class="top-btn">
+  <div class="add-del-btn">
+    <div id="add-btn"><%= image_tag"add.png", class:"add-icon"%></div>
+    <div id="del-btn"><%= image_tag"del.png", class:"del-icon"%></div>
+  </div>
+  <div class="destroy-button">
+    <%= link_to '削除', reservation_path(@reservation.id), method: :delete, id:"destroy-btn" %>
+  </div>
 </div>
 
-<div class="save-back-button">
-<%= link_to '削除', reservation_path(@reservation.id), method: :delete, class:"btn-stitch", id:"destroy-btn" %>
-<%= link_to "TOPページに戻る", root_path, class:"btn-stitch", id:"back-btn" %>
-</div>
-</div>
 <%#上部ボタン%>
 
 <div class="table">
