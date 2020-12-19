@@ -1,37 +1,64 @@
-<%= render "shared/header" %>
-
 <div class='main'>
   <div class="cover">
-    <div class="bg">
-    <%= image_tag "Disney1.jpg", class:"background" %>
+    <div class='top-nav'>
+      <ul class='top-lists'>
+      <% if user_signed_in? %>
+        <li><%= image_tag"usericon.png",class:"usericon" %></li>
+        <li><%= link_to current_user.name, "#", class: "top-user-name" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "top-logout" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "top-login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "top-sign-up" %></li>
+      <% end %>
+      </ul>
     </div>
-    <ul class="content_lists">
-      <li><%= link_to '新規作成', new_reservation_path, class: "list1" %></li>
-      <li><%= link_to 'スタッフ名編集', staffs_path, class: "list2" %></li>
-      <li><%= link_to '手続き内容編集', purposes_path, class: "list3" %></li>
-      <li><%= link_to '提案項目編集', items_path, class: "list4" %></li>
-    </ul>
+
+    <div class='logo'>
+    <%= image_tag"logo.png", class:"rsystem-icon"%>
+    </div>
+
+    <div class="content_lists">
+      <div class="list1">
+        <%= link_to image_tag("icon1.png", class:"icon"), new_reservation_path  %>
+        <p>新規作成</p>
+      </div>
+      <div class="list2">
+        <%= link_to image_tag("icon2.png", class:"icon"), staffs_path %>
+        <p>スタッフ登録</p>
+      </div>
+      <div class="list3">
+        <%= link_to image_tag("icon3.png", class:"icon"), purposes_path %>
+        <p>手続き内容</p>
+      </div>
+      <div class="list4">
+        <%= link_to image_tag("icon4.png", class:"icon"), items_path  %>
+        <p>提案項目</p>
+      </div>
+    </div>
   </div>
 
+  
   <div class="reservations">
-    <h2 class="reservation">予約管理簿一覧</h2>
     <% if user_signed_in? %>
-      <%= @reservations.each do |reservation| %>
-        <ul class='reservation-lists'>
-          <li class='reservation-list'>
-            <%= link_to "#" do %>
-              <div class='item-img-content'>
-               <%#= , class: "item-img" %>
-              </div>
-              <div class='item-info'>
-              <h3 class='item-name'>
-                <%#= item.name %>
-              </h3>
+      <% @reservations.each do |reservation| %>
+        <div class='reservation-lists'>
+          <div class='reservation-list'>
+            <%= link_to edit_reservation_path(reservation.id) do %>
+              <div class='chart'>
+                <div class="indexday">
+                  <%= reservation.day.strftime('%m/%d') %>
+                </div>
+                <div class="indexweek">
+                  <% weeks = ["月","火","水","木","金","土","日"] %>
+                  <% index = reservation.day.strftime("%u").to_i %>
+                  <%= reservation.day.strftime("(#{weeks[index - 1]})") %>
+                </div>
               </div>
             <% end %>
-          </li>
-        </ul>
+          </div>
+        </div>
       <% end %>
     <% end %>
   </div>
 </div>
+

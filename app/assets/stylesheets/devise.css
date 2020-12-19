@@ -1,0 +1,89 @@
+/*全体*/
+.contents {
+  padding-top:25px;
+  display: flex;
+  justify-content: center;
+}
+
+/*大枠*/
+.container {
+  border-radius: 10px;
+  border: solid 2px #2ABCA7;
+  background-color: #eff0f3;
+}
+
+/*見出し*/
+.new-head {
+  background-color:#2ABCA7;
+  color:#FAFAFA;
+  border-radius: 7px 7px 0 0;
+  height: 50px;
+  padding-top: 10px;
+  font-size: 3rem;
+  font-family: 'Skia-Regular_Black','Impact','Futura',sans-serif;
+}
+h2 {
+  text-align:center;
+}
+
+/*項目*/
+.field,
+.actions {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','ヒラギノ角ゴシック','Hiragino Sans','Meiryo UI','メイリオ', Meiryo,sans-serif;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 90%;
+  height: 35px;
+  border-radius: 10px;
+}
+.actions {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+input[type="submit"] {
+  background-color: #2ABCA7;
+  color:#FAFAFA;
+  border-style: none;
+  width: 100px;
+  height: 35px;
+  border-radius: 10px;
+  font-family: 'Skia-Regular_Black','Impact','Futura',sans-serif;
+}
+input[type="submit"]:hover {
+  background-color: #FAFAFA;
+  color: #2ABCA7;
+  border: solid 2px #2ABCA7;
+}
+
+/*戻るログインボタン*/
+.back-login {
+  margin-top: 50px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+.home {
+  margin-right: 50px;
+}
+.login,
+.home {
+  width: 150px;
+  background-color: #FAFAFA;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 8px;
+  border: solid 2px #2ABCA7;
+}
+.back-home,
+.send-login {
+  text-decoration: none;
+  color:#2ABCA7;
+  font-size: 1.5rem;
+  font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','ヒラギノ角ゴシック','Hiragino Sans','Meiryo UI','メイリオ', Meiryo,sans-serif;
+}
