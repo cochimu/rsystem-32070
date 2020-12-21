@@ -4,3 +4,9 @@ ja:
      user:
        name: お名前（店舗名）
        email: メールアドレス
+     staff:
+       name: スタッフ名
+     item:
+       content: 提案項目
+     purpose:
+       content: 手続き内容
