@@ -4,7 +4,7 @@
     <h2>Sign up</h2>
     </div>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <%= devise_error_messages! %>
+      <%= render 'shared/error', model: f.object %>
 
       <div class="field">
         <%= f.label :お名前 %><em>(店舗名)</em><br />
