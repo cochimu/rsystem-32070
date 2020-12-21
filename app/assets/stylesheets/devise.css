@@ -34,9 +34,10 @@ h2 {
   font-size: 1.5rem;
   font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','ヒラギノ角ゴシック','Hiragino Sans','Meiryo UI','メイリオ', Meiryo,sans-serif;
 }
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+#user_name_field,
+#user_email_field,
+#user_password_field,
+#user_pass_field {
   width: 90%;
   height: 35px;
   border-radius: 10px;
@@ -45,7 +46,7 @@ input[type="password"] {
   margin-bottom: 10px;
   margin-top: 10px;
 }
-input[type="submit"] {
+#user_submit_btn {
   background-color: #2ABCA7;
   color:#FAFAFA;
   border-style: none;
@@ -54,7 +55,7 @@ input[type="submit"] {
   border-radius: 10px;
   font-family: 'Skia-Regular_Black','Impact','Futura',sans-serif;
 }
-input[type="submit"]:hover {
+#user_submit_btn:hover {
   background-color: #FAFAFA;
   color: #2ABCA7;
   border: solid 2px #2ABCA7;

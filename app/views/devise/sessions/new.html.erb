@@ -13,12 +13,12 @@
     
       <div class="field">
         <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.email_field :email, autofocus: true, id:"user_email_field" %>
       </div>
 
       <div class="field">
         <%= f.label :パスワード %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", id:"user_password_field" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
@@ -29,7 +29,7 @@
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit "Log in", id:"user_submit_btn" %>
       </div>
     <% end %>
   </div>

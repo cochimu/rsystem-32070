@@ -8,12 +8,12 @@
 
       <div class="field">
         <%= f.label :お名前 %><em>(店舗名)</em><br />
-        <%= f.text_field :name %>
+        <%= f.text_field :name, id:"user_name_field" %>
       </div>
 
       <div class="field">
         <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email %>
+        <%= f.email_field :email, id:"user_email_field" %>
       </div>
 
       <div class="field">
@@ -21,16 +21,16 @@
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", id:"user_password_field" %>
       </div>
 
       <div class="field">
         <%= f.label :パスワード再入力 %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", id:"user_pass_field" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "Sign up", id:"user_submit_btn" %>
       </div>
     <% end %>
   </div>
