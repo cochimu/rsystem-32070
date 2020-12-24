@@ -69,7 +69,7 @@
         <%= f.collection_select(:purpose_id, Purpose.all, :id, :content, {include_blank: "手続き内容"}, {class:"purpose-content"}) %>
         <%= f.collection_select(:item_id, Item.all, :id, :content, {include_blank: "提案項目"}, {class:"item-content"}) %>
         <%= f.text_area :memo, class:"memo", placeholder: "メモ"%>
-        <%= f.submit '保存' %>
+        <%= f.submit '保存', class:"submit-btn" %>
       </div>
       <% end %>
   </div>

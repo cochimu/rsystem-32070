@@ -92,6 +92,7 @@ html {
   height: 50px;
   margin: 0 10px 10px 10px;
   border-radius: 10px;
+  text-align: center;
 }
 .right-TableRow {
   background-color: lightgray;
@@ -107,4 +108,26 @@ html {
   margin-left: 5px;
   margin-top: 10px;
   border: none;
+}
+.customer-name {
+  width: 85%;
+  height: 30px;
+  margin: 5px 10px 5px 10px;
+}
+.purpose-content {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  height: 20px;
+}
+.item-content {
+  margin-left: 15px;
+  height: 20px;
+}
+.memo {
+  width: 85%;
+  height: 60px;
+  margin-left: 10px;
+}
+.submit-btn {
+  margin-left: 140px;
 }
