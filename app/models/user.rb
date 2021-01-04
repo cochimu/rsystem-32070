@@ -15,5 +15,6 @@ class User < ApplicationRecord
   has_many :staffs
   has_many :purposes
   has_many :items
+  has_one :cover
   
 end

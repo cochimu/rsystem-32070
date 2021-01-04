@@ -73,6 +73,7 @@
 - has_many :staffs
 - has_many :purposes
 - has_many :items
+- has_one :cover
 
 ## reservations テーブル
 
@@ -89,6 +90,7 @@
 - has_many :purposes, through: reservation_purposes
 - has_many :items, through: reservation_items
 - belongs_to :user
+- has_one :cover
 
 ## reservation_staffs テーブル
 
@@ -163,4 +165,16 @@
 
 - has_many :reservation_items
 - has_many :reservations, through: reservation_items
+- belongs_to :user
+
+## covers テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| reservation | references | null: false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :reservation
 - belongs_to :user

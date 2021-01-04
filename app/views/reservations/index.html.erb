@@ -1,64 +1,80 @@
-<div class='main'>
-  <div class="cover">
-    <div class='top-nav'>
-      <ul class='top-lists'>
-      <% if user_signed_in? %>
-        <li><%= image_tag"usericon.png",class:"usericon" %></li>
-        <li><%= link_to current_user.name, "#", class: "top-user-name" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "top-logout" %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "top-login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "top-sign-up" %></li>
-      <% end %>
-      </ul>
+<%#ヘッダー%>
+<header class='menu-header'>
+  <div class='menu-nav'>
+    <div class='menu-user'>
+      <%= link_to current_user.name, "#", class: "menu-user-name" %>
     </div>
-
-    <div class='logo'>
-    <%= image_tag"logo.png", class:"rsystem-icon"%>
-    </div>
-
-    <div class="content_lists">
-      <div class="list1">
-        <%= link_to image_tag("icon1.png", class:"icon"), new_reservation_path  %>
-        <p>新規作成</p>
+    <div class="menu-icons">
+      <div class="iconback">
+        <%= link_to image_tag("homeicon.png", class:"icon1"), root_path %>
       </div>
-      <div class="list2">
-        <%= link_to image_tag("icon2.png", class:"icon"), staffs_path %>
-        <p>スタッフ登録</p>
+      <div class="iconback">
+        <%= link_to image_tag("stafficon.png", class:"icon1"), staffs_path %>
       </div>
-      <div class="list3">
-        <%= link_to image_tag("icon3.png", class:"icon"), purposes_path %>
-        <p>手続き内容</p>
+      <div class="iconback">
+        <%= link_to image_tag("purposeicon.png", class:"icon1"), purposes_path %>
       </div>
-      <div class="list4">
-        <%= link_to image_tag("icon4.png", class:"icon"), items_path  %>
-        <p>提案項目</p>
+      <div class="iconback">
+        <%= link_to image_tag("itemicon.png", class:"icon1"), items_path  %>
       </div>
     </div>
   </div>
+</header>
 
-  
-  <div class="reservations">
-    <% if user_signed_in? %>
-      <% @reservations.each do |reservation| %>
-        <div class='reservation-lists'>
-          <div class='reservation-list'>
-            <%= link_to edit_reservation_path(reservation.id) do %>
-              <div class='chart'>
-                <div class="indexday">
-                  <%= reservation.day.strftime('%m/%d') %>
-                </div>
-                <div class="indexweek">
-                  <% weeks = ["月","火","水","木","金","土","日"] %>
-                  <% index = reservation.day.strftime("%u").to_i %>
-                  <%= reservation.day.strftime("(#{weeks[index - 1]})") %>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+<%#上部ボタン%>
+<div class="top-btn">
+  <div class="add-del-btn">
+    <div id="add-btn"><%= image_tag"add.png", class:"add-icon"%></div>
+    <div id="del-btn"><%= image_tag"del.png", class:"del-icon"%></div>
   </div>
 </div>
+<%#上部ボタン%>
 
+<div class="table">
+
+
+<%#時間部分%>
+
+<div class="left-Table">
+  <div class="left-TableBody">
+  <%= form_with model: @reservation, url: reservations_path, local: true do |f| %>
+    <div class="left-TableTop">
+      <%= f.date_field(:day,{class:"day"}) %>
+    </div>
+    <div class="left-TableRow">10:00</div>
+    <div class="left-TableRow">11:00</div>
+    <div class="left-TableRow">12:00</div>
+    <div class="left-TableRow">13:00</div>
+    <div class="left-TableRow">14:00</div>
+    <div class="left-TableRow">15:00</div>
+    <div class="left-TableRow">16:00</div>
+    <div class="left-TableRow">17:00</div>
+    <div class="left-TableRow">18:00</div>
+    <div class="left-TableRow">19:00</div>
+    <div class="left-TableRow">20:00</div>
+  </div>
+</div>
+<%#時間部分%>
+
+<%#レーン部分%>
+<div class="right-Table">
+  <div class="right-TableBody">
+      <div class="right-TableTop">
+        <%= f.collection_select(:staff_id, Staff.all, :id, :name, {include_blank: "スタッフ名"}, {class:"staffname"}) %>
+      </div>
+
+      <% 11.times do %>
+      <div class="right-TableRow">
+        <%= f.text_field :customer_name, class:"customer-name", placeholder: "お客様名"%>
+        <%= f.collection_select(:purpose_id, Purpose.all, :id, :content, {include_blank: "手続き内容"}, {class:"purpose-content"}) %>
+        <%= f.collection_select(:item_id, Item.all, :id, :content, {include_blank: "提案項目"}, {class:"item-content"}) %>
+        <%= f.text_area :memo, class:"memo", placeholder: "メモ"%>
+        <%= f.submit '保存', class:"submit-btn" %>
+      </div>
+      <% end %>
+  </div>
+  <% end %>
+<div>
+<%#レーン部分%>
+
+</div>

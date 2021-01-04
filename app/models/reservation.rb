@@ -6,4 +6,5 @@ class Reservation < ApplicationRecord
   has_many :items, through: :reservation_items
   has_many :reservation_purposes
   has_many :purposes, through: :reservation_purposes
+  has_one :cover
 end

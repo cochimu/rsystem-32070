@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_05_031700) do
+ActiveRecord::Schema.define(version: 2021_01_04_140038) do
+
+  create_table "covers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "reservation_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reservation_id"], name: "index_covers_on_reservation_id"
+    t.index ["user_id"], name: "index_covers_on_user_id"
+  end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content", null: false
@@ -86,6 +95,8 @@ ActiveRecord::Schema.define(version: 2020_12_05_031700) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "covers", "reservations"
+  add_foreign_key "covers", "users"
   add_foreign_key "items", "users"
   add_foreign_key "purposes", "users"
   add_foreign_key "reservation_items", "items"
