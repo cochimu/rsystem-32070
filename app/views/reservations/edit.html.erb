@@ -1,0 +1,80 @@
+<%#ヘッダー%>
+<header class='menu-header'>
+  <div class='menu-nav'>
+    <div class='menu-user'>
+      <%= link_to current_user.name, "#", class: "menu-user-name" %>
+    </div>
+    <div class="menu-icons">
+      <div class="iconback">
+        <%= link_to image_tag("homeicon.png", class:"icon1"), root_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("stafficon.png", class:"icon1"), staffs_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("purposeicon.png", class:"icon1"), purposes_path %>
+      </div>
+      <div class="iconback">
+        <%= link_to image_tag("itemicon.png", class:"icon1"), items_path  %>
+      </div>
+    </div>
+  </div>
+</header>
+
+<%#上部ボタン%>
+<div class="top-btn">
+  <div class="add-del-btn">
+    <div id="add-btn"><%= image_tag"add.png", class:"add-icon"%></div>
+    <div id="del-btn"><%= image_tag"del.png", class:"del-icon"%></div>
+  </div>
+</div>
+<%#上部ボタン%>
+
+<div class="table">
+
+
+<%#時間部分%>
+
+<div class="left-Table">
+  <div class="left-TableBody">
+    <%= form_with model: @reservation, url: reservations_path, local: true do |f| %>
+    <div class="left-TableTop">
+      <%= f.date_field(:day,{class:"day"}) %>
+    </div>
+    <div class="left-TableRow">10:00</div>
+    <div class="left-TableRow">11:00</div>
+    <div class="left-TableRow">12:00</div>
+    <div class="left-TableRow">13:00</div>
+    <div class="left-TableRow">14:00</div>
+    <div class="left-TableRow">15:00</div>
+    <div class="left-TableRow">16:00</div>
+    <div class="left-TableRow">17:00</div>
+    <div class="left-TableRow">18:00</div>
+    <div class="left-TableRow">19:00</div>
+    <div class="left-TableRow">20:00</div>
+  </div>
+</div>
+<%#時間部分%>
+
+<%#レーン部分%>
+<div class="right-Table">
+  <div class="right-TableBody">
+    <div class="right-TableTop">
+      <%= f.collection_select(:staff_id, Staff.all, :id, :name, {class:"staffname"}) %>
+    </div>
+
+    <% 11.times do %>
+      <div class="right-TableRow">
+        <%= f.text_field :customer_name, class:"customer-name" %>
+        <%= f.collection_select(:purpose_id, Purpose.all, :id, :content, {class:"purpose-content"}) %>
+        <%= f.collection_select(:item_id, Item.all, :id, :content, {class:"item-content"}) %>
+        <%= f.text_area :memo, class:"memo" %>
+        <%= f.submit '保存', class:"submit-btn" %>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+<div>
+<%#レーン部分%>
+
+</div>

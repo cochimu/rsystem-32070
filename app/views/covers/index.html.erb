@@ -1,5 +1,8 @@
 <div class='main'>
+
   <div class="cover">
+
+    <%#ヘッダー%>
     <div class='top-nav'>
       <ul class='top-lists'>
       <% if user_signed_in? %>
@@ -12,14 +15,16 @@
       <% end %>
       </ul>
     </div>
-
+    
+    <%#トップアイコン%>
     <div class='logo'>
     <%= image_tag"logo.png", class:"rsystem-icon"%>
     </div>
 
+    <%#メニューアイコン%>
     <div class="content_lists">
       <div class="list1">
-        <%= link_to image_tag("icon1.png", class:"icon"), reservations_path  %>
+        <%= link_to image_tag("icon1.png", class:"icon"), new_reservation_path %>
         <p>新規作成</p>
       </div>
       <div class="list2">
@@ -38,6 +43,7 @@
   </div>
 
   
+  <%#予約一覧%>
   <div class="reservations">
     <% if user_signed_in? %>
       <% @reservations.each do |reservation| %>
@@ -60,4 +66,5 @@
       <% end %>
     <% end %>
   </div>
+  
 </div>

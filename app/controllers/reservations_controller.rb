@@ -1,14 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
-  def index
-    if user_signed_in?
-      @reservations = current_user.reservations
-    else
-      @reservations = Reservation.all
-    end
-  end
-
   def new
     @reservation = Reservation.new
     @staffs = current_user.staffs
