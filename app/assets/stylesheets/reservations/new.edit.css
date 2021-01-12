@@ -32,6 +32,22 @@ html {
   padding-top: 4px;
   border-radius: 50%;
 }
+.remove-btn {
+  height: 40px;
+  width: 80px;
+  margin-right: 50px;
+  margin-top: 5px;
+  padding-top: 5px;
+  background-color: #51456A;
+  border-radius: 10px;
+  text-align: center;
+}
+.remove-button {
+  font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','ヒラギノ角ゴシック','Hiragino Sans','Meiryo UI','メイリオ', Meiryo,sans-serif;
+  color: #fffffe;
+  text-decoration: none;
+  font-size: 2rem;
+}
 
 /*テーブル全体*/
 .table {
@@ -50,14 +66,14 @@ html {
 .day {
   width: 130px;
   margin-top: 15px;
-  background-color: #f25f4c;
+  background-color: #EE8585;
   font-size: 1.3rem;
   border: none;
   color: #fffffe;
   font-family: 'Skia-Regular_Black','Arial Black','Segoe UI Black','Arial Rounded MT Bold','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
 }
 .left-TableTop {
-  background-color: #f25f4c;
+  background-color: #EE8585;
   text-align: center;
   color: #fffffe;
   width: 100%;
@@ -87,7 +103,7 @@ html {
   width: 100%;
 }
 .right-TableTop {
-  background-color: #f9bc60;
+  background-color: #f6b894;
   width: 100%;
   height: 50px;
   margin: 0 10px 10px 10px;
@@ -95,19 +111,20 @@ html {
   text-align: center;
 }
 .right-TableRow {
-  background-color: lightgray;
+  background-color: #D0CBCD;
   width: 100%;
   height: 150px;
   margin: 10px;
   border-radius: 10px;
 }
 .staffname {
-  background-color: #f9bc60;
+  background-color: #f6b894;
   width: 90%;
   height: 30px;
   margin-left: 5px;
   margin-top: 10px;
   border: none;
+  font-size: 1.5rem;
 }
 .customer-name {
   width: 85%;
