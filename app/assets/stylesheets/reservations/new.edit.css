@@ -131,15 +131,19 @@ html {
   height: 30px;
   margin: 5px 10px 5px 10px;
 }
+.selectbox {
+  display: flex;
+  margin-bottom: 5px;
+}
 .purpose-content {
   margin-left: 10px;
-  margin-bottom: 5px;
   height: 20px;
-  width: 70px;
+  width: 75px;
 }
 .item-content {
-  margin-left: 15px;
+  margin-left: 5px;
   height: 20px;
+  width: 70px;
 }
 .memo {
   width: 85%;

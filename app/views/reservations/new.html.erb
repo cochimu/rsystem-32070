@@ -66,8 +66,14 @@
     <% 11.times do %>
       <div class="right-TableRow">
         <%= f.text_field :customer_name, class:"customer-name", placeholder: "お客様名"%>
-        <%= f.collection_select(:purpose_id, Purpose.all, :id, :content, {include_blank: "手続き内容"}, {class:"purpose-content"}) %>
-        <%= f.collection_select(:item_id, Item.all, :id, :content, {include_blank: "提案項目"}, {class:"item-content"}) %>
+          <div class="selectbox">
+            <div class="select1">
+              <%= f.collection_select(:purpose_id, Purpose.all, :id, :content, {include_blank: "手続き内容"}, {class:"purpose-content"}) %>
+            </div>
+            <div class="select2">
+              <%= f.collection_select(:item_id, Item.all, :id, :content, {include_blank: "提案項目"}, {class:"item-content"}) %>
+            </div>
+          </div>
         <%= f.text_area :memo, class:"memo", placeholder: "メモ"%>
         <%= f.submit '保存', class:"submit-btn" %>
       </div>
