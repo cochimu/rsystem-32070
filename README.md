@@ -7,6 +7,13 @@
 ## URL
 - http://52.197.83.13/
 
+## 画面イメージ
+<img width="1438" alt="スクリーンショット 2021-01-26 0 04 14" src="https://user-images.githubusercontent.com/73867134/105723691-6aecad80-5f6a-11eb-93e8-744f8365134e.png">
+
+<img width="1440" alt="スクリーンショット 2021-01-26 0 05 15" src="https://user-images.githubusercontent.com/73867134/105723971-b69f5700-5f6a-11eb-8722-3cea97ec60a9.png">
+
+<img width="1440" alt="スクリーンショット 2021-01-26 0 06 00" src="https://user-images.githubusercontent.com/73867134/105723994-bc953800-5f6a-11eb-9231-0098105f13b0.png">
+
 ## テスト用アカウント
 - ユーザー名:テスト
 - メールアドレス:sample1@sample
