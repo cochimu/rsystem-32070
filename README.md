@@ -1,5 +1,3 @@
-## 内容
-
 ## アプリケーション名
 - Rsystem
 
@@ -13,6 +11,16 @@
 - ユーザー名:テスト
 - メールアドレス:sample1@sample
 - パスワード:sample1
+
+## 使用技術
+- フロントエンド
+HTML/CSS/JavaScript
+
+- バックエンド
+Ruby on Rails 6.0
+
+- インフラ
+AWS(EC2,IAM)/mysql
 
 ## 利用方法
 - ログインすると、スタッフ名、提案項目、手続き内容の登録ができる
@@ -46,13 +54,6 @@
 ## 実装予定の機能
 - 保存した予約内容を見ることで過去の振り返りができる為,入力フォームの内容を一括で保存できるようにしたい
 (現在は保存しても最後に入力した内容のみ表示される状態)
-
-## ローカルでの操作方法
-  % git clone https://github.com/cochimu/rsystem-32070.git
-  % cd rsystem-32070
-  % bundle install
-  % rails db:create
-  % rails db:migrate
 
 
 # テーブル設計
